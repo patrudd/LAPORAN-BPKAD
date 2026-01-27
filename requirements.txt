@@ -1,3 +1,4 @@
+matplotib
 streamlit
 pandas
 numpy
