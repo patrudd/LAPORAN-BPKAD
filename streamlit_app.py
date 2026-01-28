@@ -19,13 +19,13 @@ st.set_page_config(
 )
 
 # ==========================================
-# CUSTOM CSS STYLING - DARK MODE OPTIMIZED
+# CUSTOM CSS STYLING - IMPROVED
 # ==========================================
 def load_custom_css():
     st.markdown("""
     <style>
     /* Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
     
     /* Global Styles */
     * {
@@ -38,20 +38,13 @@ def load_custom_css():
         padding: 0;
     }
     
-    /* Sidebar Styling - DARK MODE FIX */
+    /* Sidebar Styling */
     [data-testid="stSidebar"] {
         background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
     }
     
     [data-testid="stSidebar"] * {
-        color: white !important;
-    }
-    
-    [data-testid="stSidebar"] .stMarkdown {
-        color: white !important;
-    }
-    
-    [data-testid="stSidebar"] label {
         color: white !important;
     }
     
@@ -78,7 +71,7 @@ def load_custom_css():
     }
     
     .main-header h1 {
-        color: white !important;
+        color: white;
         font-size: 3.5em;
         font-weight: 700;
         margin: 0;
@@ -92,13 +85,13 @@ def load_custom_css():
     }
     
     .main-header p {
-        color: #f0f0f0 !important;
+        color: #f0f0f0;
         font-size: 1.4em;
         margin: 15px 0 0 0;
         animation: fadeIn 1.5s ease-in;
     }
     
-    /* IMPROVED Metric Card Styling - DARK MODE OPTIMIZED */
+    /* IMPROVED Metric Card Styling - More Visible */
     .metric-card {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         padding: 30px;
@@ -130,6 +123,7 @@ def load_custom_css():
         background-clip: text;
         margin: 15px 0;
         animation: numberGlow 2s ease-in-out infinite;
+        text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
     }
     
     @keyframes numberGlow {
@@ -139,13 +133,13 @@ def load_custom_css():
     
     .metric-label {
         font-size: 1.1em;
-        color: #333 !important;
+        color: #555;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: 600;
     }
     
-    /* Alert Box Styling - DARK MODE FIX */
+    /* Alert Box Styling - Enhanced */
     .alert-box {
         padding: 25px;
         border-radius: 15px;
@@ -172,42 +166,26 @@ def load_custom_css():
     
     .alert-danger {
         background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        color: white !important;
+        color: white;
         border-left: 6px solid #c0392b;
-    }
-    
-    .alert-danger * {
-        color: white !important;
     }
     
     .alert-warning {
         background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        color: #333 !important;
+        color: #333;
         border-left: 6px solid #e67e22;
-    }
-    
-    .alert-warning * {
-        color: #333 !important;
     }
     
     .alert-success {
         background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        color: #333 !important;
+        color: #333;
         border-left: 6px solid #27ae60;
-    }
-    
-    .alert-success * {
-        color: #333 !important;
     }
     
     .alert-info {
         background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-        color: #333 !important;
+        color: #333;
         border-left: 6px solid #3498db;
-    }
-    
-    .alert-info * {
-        color: #333 !important;
     }
     
     /* Table Styling */
@@ -219,8 +197,8 @@ def load_custom_css():
     
     /* Button Styling - Enhanced */
     .stButton>button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        color: white !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
         border: none;
         padding: 15px 40px;
         border-radius: 30px;
@@ -234,7 +212,7 @@ def load_custom_css():
     .stButton>button:hover {
         transform: scale(1.08) translateY(-2px);
         box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
-        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     }
     
     /* Loading Animation */
@@ -247,10 +225,10 @@ def load_custom_css():
         animation: pulse 1.5s ease-in-out infinite;
     }
     
-    /* Section Headers - DARK MODE FIX */
+    /* Section Headers - Enhanced */
     .section-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white !important;
+        color: white;
         padding: 20px 30px;
         border-radius: 15px;
         margin: 30px 0 20px 0;
@@ -265,10 +243,10 @@ def load_custom_css():
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
     
-    /* Tabs Styling - DARK MODE FIX */
+    /* Tabs Styling - Improved */
     .stTabs [data-baseweb="tab-list"] {
         gap: 15px;
-        background-color: rgba(255,255,255,0.95);
+        background-color: white;
         border-radius: 15px;
         padding: 15px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -276,7 +254,6 @@ def load_custom_css():
     
     .stTabs [data-baseweb="tab"] {
         background-color: #f0f0f0;
-        color: #333 !important;
         border-radius: 10px;
         padding: 12px 25px;
         font-weight: 700;
@@ -285,31 +262,27 @@ def load_custom_css():
     
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white !important;
+        color: white;
         transform: scale(1.05);
     }
     
     /* Expander Styling */
     .streamlit-expanderHeader {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white !important;
+        color: white;
         border-radius: 10px;
         font-weight: 700;
     }
     
-    /* Footer - DARK MODE FIX */
+    /* Footer */
     .footer {
         text-align: center;
         padding: 40px;
         margin-top: 60px;
         background: rgba(255,255,255,0.15);
         border-radius: 20px;
-        color: white !important;
+        color: white;
         backdrop-filter: blur(10px);
-    }
-    
-    .footer * {
-        color: white !important;
     }
     
     /* Metric Container Animation */
@@ -378,22 +351,22 @@ def load_custom_css():
     
     .badge-danger {
         background-color: #e74c3c;
-        color: white !important;
+        color: white;
     }
     
     .badge-warning {
         background-color: #f39c12;
-        color: white !important;
+        color: white;
     }
     
     .badge-success {
         background-color: #27ae60;
-        color: white !important;
+        color: white;
     }
     
     .badge-info {
         background-color: #3498db;
-        color: white !important;
+        color: white;
     }
     
     /* Tooltip */
@@ -434,7 +407,7 @@ def load_custom_css():
         background: #764ba2;
     }
     
-    /* Chart Container - IMPROVED WITH BETTER MARGINS */
+    /* Chart Container - IMPROVED */
     .chart-container {
         background: white;
         padding: 25px;
@@ -444,10 +417,10 @@ def load_custom_css():
         animation: fadeInUp 0.6s ease-out;
     }
     
-    /* Stats Box - DARK MODE FIX */
+    /* Stats Box - Enhanced */
     .stats-box {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white !important;
+        color: white;
         padding: 25px;
         border-radius: 15px;
         text-align: center;
@@ -459,16 +432,11 @@ def load_custom_css():
         transform: translateY(-5px);
     }
     
-    .stats-box * {
-        color: white !important;
-    }
-    
     .stats-number {
         font-size: 3.5em;
         font-weight: 800;
         margin: 15px 0;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        color: white !important;
     }
     
     .stats-label {
@@ -477,7 +445,6 @@ def load_custom_css():
         text-transform: uppercase;
         letter-spacing: 3px;
         font-weight: 600;
-        color: white !important;
     }
     
     /* Divider - Enhanced */
@@ -494,7 +461,7 @@ def load_custom_css():
         50% { opacity: 1; }
     }
     
-    /* Info Box - DARK MODE FIX */
+    /* Info Box - Enhanced */
     .info-box {
         background: rgba(255, 255, 255, 0.98);
         padding: 25px;
@@ -503,10 +470,6 @@ def load_custom_css():
         margin: 20px 0;
         box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         animation: fadeInUp 0.6s ease-out;
-    }
-    
-    .info-box * {
-        color: #333 !important;
     }
     
     /* Icon Container - Enhanced */
@@ -518,7 +481,7 @@ def load_custom_css():
         height: 60px;
         border-radius: 50%;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white !important;
+        color: white;
         font-size: 1.8em;
         margin-right: 20px;
         box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
@@ -554,7 +517,7 @@ def load_custom_css():
         height: 50px;
         border-radius: 50%;
         background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-        color: #333 !important;
+        color: #333;
         font-weight: 800;
         font-size: 1.2em;
         box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
@@ -566,7 +529,7 @@ def load_custom_css():
         50% { transform: scale(1.1); }
     }
     
-    /* Vehicle Card - DARK MODE FIX */
+    /* Vehicle Card */
     .vehicle-card {
         background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
         padding: 20px;
@@ -582,10 +545,6 @@ def load_custom_css():
         box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
     }
     
-    .vehicle-card * {
-        color: #333 !important;
-    }
-    
     /* Enhanced Number Animation */
     @keyframes countUp {
         from { opacity: 0; transform: translateY(20px); }
@@ -596,7 +555,7 @@ def load_custom_css():
         animation: countUp 1s ease-out;
     }
     
-    /* Glassmorphism Effect - DARK MODE FIX */
+    /* Glassmorphism Effect */
     .glass-card {
         background: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(10px);
@@ -606,13 +565,9 @@ def load_custom_css():
         border: 1px solid rgba(255, 255, 255, 0.18);
     }
     
-    .glass-card * {
-        color: white !important;
-    }
-    
     /* Neon Glow Effect */
     .neon-text {
-        color: #fff !important;
+        color: #fff;
         text-shadow: 
             0 0 5px #667eea,
             0 0 10px #667eea,
@@ -739,7 +694,7 @@ def load_custom_css():
     /* Price Tag Effect */
     .price-tag {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white !important;
+        color: white;
         padding: 10px 20px;
         border-radius: 8px;
         font-weight: 700;
@@ -777,20 +732,6 @@ def load_custom_css():
         0% { left: -100%; }
         100% { left: 100%; }
     }
-    
-    /* Streamlit Native Elements Dark Mode Fix */
-    .stSelectbox label, .stMultiSelect label, .stRadio label {
-        color: white !important;
-    }
-    
-    /* File Uploader Dark Mode Fix */
-    .stFileUploader label {
-        color: white !important;
-    }
-    
-    .stFileUploader div {
-        color: white !important;
-    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -807,10 +748,10 @@ def load_and_process_data(file_path=None):
         # Try different encodings and separators
         try:
             df = pd.read_csv(file_path, sep=';')
-        except Exception:
+        except:
             try:
                 df = pd.read_csv(file_path, sep=',')
-            except Exception:
+            except:
                 df = pd.read_csv(file_path)
         
         # Clean column names
@@ -895,10 +836,9 @@ def detect_cost_anomalies(df):
         iqr = q3 - q1
         return q3 + (1.5 * iqr)
     
-    df_copy = df.copy()
-    bounds = df_copy.groupby('Tahun')['Total Biaya'].apply(get_upper_bound).to_dict()
-    df_copy['Batas_Wajar'] = df_copy['Tahun'].map(bounds)
-    anomalies = df_copy[df_copy['Total Biaya'] > df_copy['Batas_Wajar']]
+    bounds = df.groupby('Tahun')['Total Biaya'].apply(get_upper_bound).to_dict()
+    df['Batas_Wajar'] = df['Tahun'].map(bounds)
+    anomalies = df[df['Total Biaya'] > df['Batas_Wajar']]
     return anomalies
 
 def detect_logic_anomalies(df):
@@ -958,19 +898,19 @@ def calculate_type_statistics(df):
     return type_stats.sort_values('Total_Biaya', ascending=False)
 
 # ==========================================
-# VISUALIZATION FUNCTIONS - IMPROVED WITH PROPER MARGINS
+# VISUALIZATION FUNCTIONS - IMPROVED
 # ==========================================
 def create_yearly_trend_chart(summary_df):
-    """Create animated yearly trend chart with better margins - ALL TEXT VISIBLE"""
+    """Create animated yearly trend chart with better margins"""
     if summary_df.empty:
         fig = go.Figure()
         fig.add_annotation(
             text="Tidak ada data untuk ditampilkan",
             xref="paper", yref="paper",
             x=0.5, y=0.5, showarrow=False,
-            font=dict(size=16, color='#333')
+            font=dict(size=16)
         )
-        fig.update_layout(height=400, paper_bgcolor='white', plot_bgcolor='white')
+        fig.update_layout(height=400)
         return fig
     
     fig = go.Figure()
@@ -990,52 +930,48 @@ def create_yearly_trend_chart(summary_df):
         ),
         text=[f'Rp {val:,.0f}' for val in costs],
         textposition='outside',
-        textfont=dict(size=12, color='#333', family='Poppins', weight=600),
+        textfont=dict(size=12, color='#333', family='Poppins'),
         hovertemplate='<b>Tahun %{x}</b><br>Total: Rp %{y:,.0f}<extra></extra>'
     ))
     
-    # FIXED: Much better layout with proper margins - NO CUT OFF TEXT
+    # IMPROVED: Better layout with proper margins
     fig.update_layout(
         title=dict(
             text='Tren Pengeluaran Tahunan',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
         xaxis_title='Tahun',
         yaxis_title='Total Biaya (Rp)',
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(size=13, family='Poppins', color='#333'),
-        height=500,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(size=12, family='Poppins'),
+        height=450,
         showlegend=False,
-        margin=dict(l=100, r=100, t=120, b=100),  # FIXED: Larger margins for all text
+        margin=dict(l=80, r=80, t=100, b=80),  # FIXED: Added proper margins
         xaxis=dict(
             showgrid=False,
-            zeroline=False,
-            tickfont=dict(size=12, color='#333')
+            zeroline=False
         ),
         yaxis=dict(
             showgrid=True,
             gridcolor='rgba(0,0,0,0.1)',
-            zeroline=False,
-            tickfont=dict(size=12, color='#333')
+            zeroline=False
         )
     )
     
     return fig
 
 def create_vendor_pie_chart(vendor_df):
-    """Create vendor distribution pie chart with animation - ALL TEXT VISIBLE"""
+    """Create vendor distribution pie chart with animation"""
     if vendor_df.empty or len(vendor_df) == 0:
         fig = go.Figure()
         fig.add_annotation(
             text="Tidak ada data vendor",
             xref="paper", yref="paper",
             x=0.5, y=0.5, showarrow=False,
-            font=dict(size=16, color='#333')
+            font=dict(size=16)
         )
-        fig.update_layout(height=400, paper_bgcolor='white', plot_bgcolor='white')
+        fig.update_layout(height=400)
         return fig
     
     # Prepare labels and values
@@ -1055,37 +991,33 @@ def create_vendor_pie_chart(vendor_df):
             line=dict(color='white', width=3)
         ),
         textinfo='label+percent',
-        textfont=dict(size=11, family='Poppins', color='#333'),
+        textfont=dict(size=11, family='Poppins'),
         hovertemplate='<b>%{label}</b><br>Rp %{value:,.0f}<br>%{percent}<extra></extra>',
-        pull=[0.05 if i == 0 else 0 for i in range(len(labels))]
+        pull=[0.05 if i == 0 else 0 for i in range(len(labels))]  # Pull out largest slice
     )])
     
     fig.update_layout(
         title=dict(
             text='Distribusi Pengeluaran per Vendor',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
-        height=500,
-        paper_bgcolor='white',
-        plot_bgcolor='white',
+        height=450,
         showlegend=True,
         legend=dict(
             orientation="v",
             yanchor="middle",
             y=0.5,
             xanchor="left",
-            x=1.02,
-            font=dict(size=11, color='#333')
+            x=1.05,
+            font=dict(size=10)
         ),
-        margin=dict(l=20, r=200, t=100, b=20)  # FIXED: Even larger right margin for legend
+        margin=dict(l=20, r=150, t=80, b=20)  # FIXED: Better margins for legend
     )
     
     return fig
 
 def create_monthly_heatmap(df):
-    """Create monthly cost heatmap with animation - ALL TEXT VISIBLE"""
+    """Create monthly cost heatmap with animation"""
     pivot_data = df.pivot_table(
         values='Total Biaya',
         index='Bulan',
@@ -1106,33 +1038,26 @@ def create_monthly_heatmap(df):
         colorscale='RdYlGn_r',
         text=[[f'Rp {val:,.0f}' for val in row] for row in pivot_data.values],
         texttemplate='%{text}',
-        textfont={"size": 10, "color": "#333"},
+        textfont={"size": 10},
         hovertemplate='<b>%{y} %{x}</b><br>Total: Rp %{z:,.0f}<extra></extra>',
-        colorbar=dict(title="Total Biaya (Rp)", titlefont=dict(color='#333'), tickfont=dict(color='#333'))
+        colorbar=dict(title="Total Biaya (Rp)")
     ))
     
     fig.update_layout(
         title=dict(
             text='Heatmap Pengeluaran Bulanan',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
         xaxis_title='Tahun',
         yaxis_title='Bulan',
-        height=600,
-        paper_bgcolor='white',
-        plot_bgcolor='white',
-        font=dict(color='#333'),
-        margin=dict(l=150, r=120, t=120, b=100),  # FIXED: Larger left margin for month names
-        xaxis=dict(tickfont=dict(size=12, color='#333')),
-        yaxis=dict(tickfont=dict(size=12, color='#333'))
+        height=550,
+        margin=dict(l=120, r=80, t=100, b=80)  # FIXED: Better margins
     )
     
     return fig
 
 def create_category_chart(category_df):
-    """Create repair category distribution chart - ALL TEXT VISIBLE"""
+    """Create repair category distribution chart with better margins"""
     fig = go.Figure(data=[
         go.Bar(
             y=category_df.index,
@@ -1146,7 +1071,7 @@ def create_category_chart(category_df):
             ),
             text=[f'Rp {val:,.0f}' for val in category_df['sum']],
             textposition='outside',
-            textfont=dict(size=11, color='#333', family='Poppins', weight=600),
+            textfont=dict(size=11, color='#333', family='Poppins'),
             hovertemplate='<b>%{y}</b><br>Total: Rp %{x:,.0f}<br>Transaksi: %{customdata}<extra></extra>',
             customdata=category_df['count']
         )
@@ -1155,32 +1080,22 @@ def create_category_chart(category_df):
     fig.update_layout(
         title=dict(
             text='Distribusi Biaya per Kategori Kerusakan',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
         xaxis_title='Total Biaya (Rp)',
         yaxis_title='Kategori',
-        height=max(500, len(category_df) * 55),
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(color='#333'),
-        margin=dict(l=250, r=150, t=120, b=100),  # FIXED: Much larger left margin for category names
-        xaxis=dict(
-            showgrid=True, 
-            gridcolor='rgba(0,0,0,0.1)',
-            tickfont=dict(size=12, color='#333')
-        ),
-        yaxis=dict(
-            showgrid=False,
-            tickfont=dict(size=11, color='#333')
-        )
+        height=max(450, len(category_df) * 50),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        margin=dict(l=180, r=120, t=100, b=80),  # FIXED: Much better left margin
+        xaxis=dict(showgrid=True, gridcolor='rgba(0,0,0,0.1)'),
+        yaxis=dict(showgrid=False)
     )
     
     return fig
 
 def create_scatter_plot(df):
-    """Create scatter plot for cost vs frequency - ALL TEXT VISIBLE"""
+    """Create scatter plot for cost vs frequency with animation"""
     unit_stats = df.groupby('Nopol').agg({
         'Total Biaya': 'sum',
         'Bulan': 'count',
@@ -1201,30 +1116,25 @@ def create_scatter_plot(df):
     )
     
     fig.update_layout(
-        height=600,
-        font=dict(family='Poppins', color='#333'),
+        height=550,
+        font=dict(family='Poppins'),
         title_font=dict(size=20, color='#333', weight=700),
-        paper_bgcolor='white',
-        plot_bgcolor='white',
-        margin=dict(l=100, r=100, t=120, b=100),
-        xaxis=dict(tickfont=dict(color='#333')),
-        yaxis=dict(tickfont=dict(color='#333')),
-        legend=dict(font=dict(color='#333'))
+        margin=dict(l=80, r=80, t=100, b=80)
     )
     
     return fig
 
 def create_timeline_chart(monthly_df):
-    """Create timeline chart for monthly trends - ALL TEXT VISIBLE"""
+    """Create timeline chart for monthly trends with animation"""
     if monthly_df.empty:
         fig = go.Figure()
         fig.add_annotation(
             text="Tidak ada data bulanan",
             xref="paper", yref="paper",
             x=0.5, y=0.5, showarrow=False,
-            font=dict(size=16, color='#333')
+            font=dict(size=16)
         )
-        fig.update_layout(height=400, paper_bgcolor='white', plot_bgcolor='white')
+        fig.update_layout(height=400)
         return fig
     
     monthly_df = monthly_df.copy()
@@ -1250,33 +1160,24 @@ def create_timeline_chart(monthly_df):
     fig.update_layout(
         title=dict(
             text='Timeline Pengeluaran Bulanan',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
         xaxis_title='Periode',
         yaxis_title='Total Biaya (Rp)',
-        height=500,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
+        height=450,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
         hovermode='x unified',
-        font=dict(family='Poppins', color='#333'),
-        margin=dict(l=100, r=100, t=120, b=100),
-        xaxis=dict(
-            showgrid=False,
-            tickfont=dict(size=12, color='#333')
-        ),
-        yaxis=dict(
-            showgrid=True, 
-            gridcolor='rgba(0,0,0,0.1)',
-            tickfont=dict(size=12, color='#333')
-        )
+        font=dict(family='Poppins'),
+        margin=dict(l=80, r=80, t=100, b=80),  # FIXED: Better margins
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=True, gridcolor='rgba(0,0,0,0.1)')
     )
     
     return fig
 
 def create_box_plot(df):
-    """Create box plot for cost distribution - ALL TEXT VISIBLE"""
+    """Create box plot for cost distribution by year"""
     fig = px.box(
         df,
         x='Tahun',
@@ -1288,21 +1189,17 @@ def create_box_plot(df):
     )
     
     fig.update_layout(
-        height=550,
+        height=500,
         showlegend=False,
-        font=dict(family='Poppins', color='#333'),
+        font=dict(family='Poppins'),
         title_font=dict(size=20, color='#333', weight=700),
-        paper_bgcolor='white',
-        plot_bgcolor='white',
-        margin=dict(l=100, r=100, t=120, b=100),
-        xaxis=dict(tickfont=dict(color='#333')),
-        yaxis=dict(tickfont=dict(color='#333'))
+        margin=dict(l=80, r=80, t=100, b=80)
     )
     
     return fig
 
 def create_vendor_comparison_chart(vendor_df, top_n=10):
-    """Create vendor comparison bar chart - ALL TEXT VISIBLE"""
+    """Create vendor comparison bar chart with better margins"""
     top_vendors = vendor_df.head(top_n)
     
     fig = go.Figure(data=[
@@ -1318,7 +1215,7 @@ def create_vendor_comparison_chart(vendor_df, top_n=10):
             ),
             text=[f'Rp {val:,.0f}' for val in top_vendors.values],
             textposition='outside',
-            textfont=dict(size=11, color='#333', family='Poppins', weight=600),
+            textfont=dict(size=11, color='#333', family='Poppins'),
             hovertemplate='<b>%{y}</b><br>Total: Rp %{x:,.0f}<extra></extra>'
         )
     ])
@@ -1326,32 +1223,22 @@ def create_vendor_comparison_chart(vendor_df, top_n=10):
     fig.update_layout(
         title=dict(
             text=f'Top {top_n} Vendor by Total Cost',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
         xaxis_title='Total Biaya (Rp)',
         yaxis_title='Vendor',
-        height=max(550, top_n * 60),
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(color='#333'),
-        margin=dict(l=350, r=180, t=120, b=100),  # FIXED: Much wider left margin for long vendor names
-        xaxis=dict(
-            showgrid=True, 
-            gridcolor='rgba(0,0,0,0.1)',
-            tickfont=dict(size=12, color='#333')
-        ),
-        yaxis=dict(
-            showgrid=False,
-            tickfont=dict(size=10, color='#333')
-        )
+        height=max(500, top_n * 50),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        margin=dict(l=300, r=120, t=100, b=80),  # FIXED: Much wider left margin for long vendor names
+        xaxis=dict(showgrid=True, gridcolor='rgba(0,0,0,0.1)'),
+        yaxis=dict(showgrid=False)
     )
     
     return fig
 
 def create_type_distribution_chart(type_stats):
-    """Create vehicle type distribution pie chart - ALL TEXT VISIBLE"""
+    """Create vehicle type distribution pie chart"""
     fig = go.Figure(data=[go.Pie(
         labels=type_stats.index,
         values=type_stats['Total_Biaya'],
@@ -1361,36 +1248,38 @@ def create_type_distribution_chart(type_stats):
             line=dict(color='white', width=3)
         ),
         textinfo='label+percent',
-        textfont=dict(size=11, family='Poppins', color='#333'),
+        textfont=dict(size=11, family='Poppins'),
         hovertemplate='<b>%{label}</b><br>Total: Rp %{value:,.0f}<br>%{percent}<extra></extra>'
     )])
     
     fig.update_layout(
         title=dict(
             text='Distribusi Biaya per Tipe Kendaraan',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
-        height=500,
-        paper_bgcolor='white',
-        plot_bgcolor='white',
+        height=450,
         showlegend=True,
         legend=dict(
             orientation="v",
             yanchor="middle",
             y=0.5,
             xanchor="left",
-            x=1.02,
-            font=dict(size=11, color='#333')
+            x=1.05,
+            font=dict(size=10)
         ),
-        margin=dict(l=20, r=200, t=100, b=20)
+        margin=dict(l=20, r=150, t=80, b=20)
     )
     
     return fig
 
 def create_monthly_comparison_chart(df, years):
-    """Create monthly comparison chart across years - ALL TEXT VISIBLE"""
+    """Create monthly comparison chart across years"""
+    monthly_data = []
+    
+    for year in years:
+        year_data = df[df['Tahun'] == year].groupby('Bulan')['Total Biaya'].sum()
+        monthly_data.append(year_data)
+    
     fig = go.Figure()
     
     colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe']
@@ -1406,42 +1295,31 @@ def create_monthly_comparison_chart(df, years):
             marker_color=colors[idx % len(colors)],
             text=[f'Rp {val:,.0f}' for val in monthly_sum.values],
             textposition='outside' if len(years) == 1 else 'auto',
-            textfont=dict(size=10, color='#333'),
+            textfont=dict(size=10),
             hovertemplate='<b>%{x} %{fullData.name}</b><br>Total: Rp %{y:,.0f}<extra></extra>'
         ))
     
     fig.update_layout(
         title=dict(
             text='Perbandingan Pengeluaran Bulanan',
-            font=dict(size=20, color='#333', family='Poppins', weight=700),
-            x=0.5,
-            xanchor='center'
+            font=dict(size=20, color='#333', family='Poppins', weight=700)
         ),
         xaxis_title='Bulan',
         yaxis_title='Total Biaya (Rp)',
         barmode='group',
-        height=550,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(family='Poppins', color='#333'),
-        margin=dict(l=100, r=100, t=120, b=150),  # FIXED: More bottom margin for labels
-        xaxis=dict(
-            showgrid=False,
-            tickfont=dict(size=11, color='#333'),
-            tickangle=-45
-        ),
-        yaxis=dict(
-            showgrid=True, 
-            gridcolor='rgba(0,0,0,0.1)',
-            tickfont=dict(size=12, color='#333')
-        ),
+        height=500,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(family='Poppins'),
+        margin=dict(l=80, r=80, t=100, b=120),  # FIXED: More bottom margin for labels
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=True, gridcolor='rgba(0,0,0,0.1)'),
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=-0.35,
+            y=-0.3,
             xanchor="center",
-            x=0.5,
-            font=dict(color='#333')
+            x=0.5
         )
     )
     
@@ -1460,7 +1338,7 @@ def main():
         <div style='text-align: center; padding: 20px;'>
             <h1 style='font-size: 3em; animation: float 3s ease-in-out infinite;'>🚗</h1>
             <h2 class='neon-text'>Dashboard Analisis</h2>
-            <p style='font-size: 0.9em; opacity: 0.9; color: white;'>Pemeliharaan Kendaraan</p>
+            <p style='font-size: 0.9em; opacity: 0.8;'>Pemeliharaan Kendaraan</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -1534,7 +1412,7 @@ def main():
         <div class='glass-card'>
             <div style='text-align: center;'>
                 <div class='animated-number' style='font-size: 2em; font-weight: 800; color: white;'>{len(df_filtered):,}</div>
-                <div style='color: rgba(255,255,255,0.9); margin-top: 5px;'>Total Transaksi</div>
+                <div style='color: rgba(255,255,255,0.8); margin-top: 5px;'>Total Transaksi</div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -1543,7 +1421,7 @@ def main():
         <div class='glass-card' style='margin-top: 15px;'>
             <div style='text-align: center;'>
                 <div class='animated-number' style='font-size: 2em; font-weight: 800; color: white;'>{df_filtered['Tahun'].min()}-{df_filtered['Tahun'].max()}</div>
-                <div style='color: rgba(255,255,255,0.9); margin-top: 5px;'>Periode Data</div>
+                <div style='color: rgba(255,255,255,0.8); margin-top: 5px;'>Periode Data</div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -1552,7 +1430,7 @@ def main():
         <div class='glass-card' style='margin-top: 15px;'>
             <div style='text-align: center;'>
                 <div class='animated-number' style='font-size: 2em; font-weight: 800; color: white;'>{df_filtered['Nopol'].nunique()}</div>
-                <div style='color: rgba(255,255,255,0.9); margin-top: 5px;'>Jumlah Kendaraan</div>
+                <div style='color: rgba(255,255,255,0.8); margin-top: 5px;'>Jumlah Kendaraan</div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -1584,7 +1462,7 @@ def main():
             <div class="metric-card slide-left">
                 <div class="metric-label">💰 Total Pengeluaran</div>
                 <div class="metric-value">{total_cost:,.0f}</div>
-                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Rupiah</div>
+                <div style="font-size: 0.85em; color: #888; margin-top: 5px;">Rupiah</div>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1593,7 +1471,7 @@ def main():
             <div class="metric-card slide-left" style="animation-delay: 0.2s;">
                 <div class="metric-label">📈 Rata-rata Biaya</div>
                 <div class="metric-value">{avg_cost:,.0f}</div>
-                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Per Transaksi</div>
+                <div style="font-size: 0.85em; color: #888; margin-top: 5px;">Per Transaksi</div>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1602,7 +1480,7 @@ def main():
             <div class="metric-card slide-right" style="animation-delay: 0.1s;">
                 <div class="metric-label">📋 Total Transaksi</div>
                 <div class="metric-value">{total_transactions:,}</div>
-                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Transaksi</div>
+                <div style="font-size: 0.85em; color: #888; margin-top: 5px;">Transaksi</div>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1611,7 +1489,7 @@ def main():
             <div class="metric-card slide-right" style="animation-delay: 0.3s;">
                 <div class="metric-label">🚗 Jumlah Kendaraan</div>
                 <div class="metric-value">{total_vehicles}</div>
-                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Unit</div>
+                <div style="font-size: 0.85em; color: #888; margin-top: 5px;">Unit</div>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1667,8 +1545,8 @@ def main():
                 
                 st.markdown(f"""
                 <div class="vehicle-card">
-                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-                        <div style="display: flex; align-items: center; flex: 1; min-width: 200px; margin: 10px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; flex: 1;">
                             <div style="
                                 width: 50px; 
                                 height: 50px; 
@@ -1682,22 +1560,21 @@ def main():
                                 color: #333;
                                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
                                 margin-right: 20px;
-                                flex-shrink: 0;
                             ">
                                 #{idx}
                             </div>
-                            <div style="flex: 1; min-width: 150px;">
+                            <div style="flex: 1;">
                                 <div style="font-size: 1.3em; font-weight: 700; color: #333;">{nopol}</div>
                                 <div style="font-size: 0.9em; color: #666; margin-top: 3px;">{vtype}</div>
                             </div>
                         </div>
-                        <div style="text-align: right; margin: 10px 30px;">
+                        <div style="text-align: right; margin: 0 30px;">
                             <div style="font-size: 0.85em; color: #666; text-transform: uppercase;">Total Biaya</div>
                             <div style="font-size: 1.5em; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                 Rp {row['Total_Biaya']:,.0f}
                             </div>
                         </div>
-                        <div style="text-align: right; margin: 10px;">
+                        <div style="text-align: right;">
                             <div style="font-size: 0.85em; color: #666; text-transform: uppercase;">Frekuensi</div>
                             <div style="font-size: 1.5em; font-weight: 800; color: #667eea;">
                                 {int(row['Frekuensi_Servis'])}x
@@ -1733,6 +1610,7 @@ def main():
             
             # Heatmap
             st.markdown("<div class='chart-container'>", unsafe_allow_html=True)
+            monthly_data = calculate_monthly_trend(df_filtered)
             fig_heatmap = create_monthly_heatmap(df_filtered)
             st.plotly_chart(fig_heatmap, use_container_width=True)
             st.markdown("</div>", unsafe_allow_html=True)
@@ -1750,7 +1628,6 @@ def main():
                 st.markdown("<div class='info-box'>", unsafe_allow_html=True)
                 st.subheader("📊 Insight Temporal")
                 
-                monthly_data = calculate_monthly_trend(df_filtered)
                 if not monthly_data.empty and len(monthly_data) > 0:
                     max_month = monthly_data.loc[monthly_data['Total Biaya'].idxmax()]
                     min_month = monthly_data.loc[monthly_data['Total Biaya'].idxmin()]
@@ -1842,9 +1719,8 @@ def main():
                 st.subheader("🏆 Top 5 Vendor Detail")
                 for idx, (vendor, cost) in enumerate(vendors.head(5).items(), 1):
                     pct = (cost / vendors.sum()) * 100
-                    vendor_display = vendor[:40] + "..." if len(vendor) > 40 else vendor
-                    st.markdown(f"**{idx}. {vendor_display}**")
-                    st.progress(min(pct / 100, 1.0))
+                    st.markdown(f"**{idx}. {vendor[:40]}...**" if len(vendor) > 40 else f"**{idx}. {vendor}**")
+                    st.progress(pct / 100)
                     st.caption(f"Rp {cost:,.0f} ({pct:.1f}%)")
                     st.markdown("---")
                 st.markdown("</div>", unsafe_allow_html=True)
@@ -1932,14 +1808,10 @@ def main():
                 color_discrete_sequence=['#667eea']
             )
             fig_hist.update_layout(
-                height=500,
-                font=dict(family='Poppins', color='#333'),
+                height=450,
+                font=dict(family='Poppins'),
                 title_font=dict(size=20, color='#333', weight=700),
-                paper_bgcolor='white',
-                plot_bgcolor='white',
-                margin=dict(l=100, r=100, t=120, b=100),
-                xaxis=dict(tickfont=dict(color='#333')),
-                yaxis=dict(tickfont=dict(color='#333'))
+                margin=dict(l=80, r=80, t=100, b=80)
             )
             st.plotly_chart(fig_hist, use_container_width=True)
             st.markdown("</div>", unsafe_allow_html=True)
@@ -1970,9 +1842,9 @@ def main():
             <div class="alert-box alert-danger">
                 <div style='text-align: center;'>
                     <div style='font-size: 3em;'>⚠️</div>
-                    <h3 style='margin: 10px 0; color: white;'>Anomali Biaya</h3>
+                    <h3 style='margin: 10px 0;'>Anomali Biaya</h3>
                     <div class="stats-number" style="font-size: 3em; color: white;">{len(cost_anomalies)}</div>
-                    <p style='margin: 5px 0; color: white;'>Transaksi dengan biaya ekstrim</p>
+                    <p style='margin: 5px 0;'>Transaksi dengan biaya ekstrim</p>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -1982,9 +1854,9 @@ def main():
             <div class="alert-box alert-warning">
                 <div style='text-align: center;'>
                     <div style='font-size: 3em;'>🤔</div>
-                    <h3 style='margin: 10px 0; color: #333;'>Anomali Logika</h3>
+                    <h3 style='margin: 10px 0;'>Anomali Logika</h3>
                     <div class="stats-number" style="font-size: 3em; color: #333;">{len(logic_anomalies)}</div>
-                    <p style='margin: 5px 0; color: #333;'>Ketidaksesuaian kategori-biaya</p>
+                    <p style='margin: 5px 0;'>Ketidaksesuaian kategori-biaya</p>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -1994,9 +1866,9 @@ def main():
             <div class="alert-box alert-info">
                 <div style='text-align: center;'>
                     <div style='font-size: 3em;'>📋</div>
-                    <h3 style='margin: 10px 0; color: #333;'>Duplikasi</h3>
+                    <h3 style='margin: 10px 0;'>Duplikasi</h3>
                     <div class="stats-number" style="font-size: 3em; color: #333;">{len(duplicates)}</div>
-                    <p style='margin: 5px 0; color: #333;'>Potensi double billing</p>
+                    <p style='margin: 5px 0;'>Potensi double billing</p>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -2019,8 +1891,8 @@ def main():
                 <div style='display: flex; align-items: center;'>
                     <div class='custom-alert-icon'>⚠️</div>
                     <div>
-                        <h3 style='margin: 0; color: white;'>Perhatian!</h3>
-                        <p style='margin: 5px 0 0 0; color: white;'>Ditemukan {len(cost_anomalies)} transaksi dengan biaya di luar batas wajar!</p>
+                        <h3 style='margin: 0;'>Perhatian!</h3>
+                        <p style='margin: 5px 0 0 0;'>Ditemukan {len(cost_anomalies)} transaksi dengan biaya di luar batas wajar!</p>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
@@ -2067,19 +1939,13 @@ def main():
                     line_dash="dash",
                     line_color="red",
                     annotation_text="Batas Wajar Rata-rata",
-                    annotation_position="top right",
-                    annotation_font_color="#333"
+                    annotation_position="top right"
                 )
                 fig_anom.update_layout(
-                    height=600,
-                    font=dict(family='Poppins', color='#333'),
+                    height=550,
+                    font=dict(family='Poppins'),
                     title_font=dict(size=20, color='#333', weight=700),
-                    paper_bgcolor='white',
-                    plot_bgcolor='white',
-                    margin=dict(l=100, r=100, t=120, b=100),
-                    legend=dict(font=dict(color='#333')),
-                    xaxis=dict(tickfont=dict(color='#333')),
-                    yaxis=dict(tickfont=dict(color='#333'))
+                    margin=dict(l=80, r=80, t=100, b=80)
                 )
                 st.plotly_chart(fig_anom, use_container_width=True)
                 st.markdown("</div>", unsafe_allow_html=True)
@@ -2101,7 +1967,7 @@ def main():
                 <div style='text-align: center; padding: 20px;'>
                     <div style='font-size: 4em;'>✅</div>
                     <h3 style='color: #27ae60; margin: 15px 0;'>Tidak Ada Anomali</h3>
-                    <p style='color: #333;'>Semua transaksi dalam batas wajar</p>
+                    <p>Semua transaksi dalam batas wajar</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.markdown("</div>", unsafe_allow_html=True)
@@ -2115,8 +1981,8 @@ def main():
                 <div style='display: flex; align-items: center;'>
                     <div class='custom-alert-icon'>⚠️</div>
                     <div>
-                        <h3 style='margin: 0; color: #333;'>Peringatan Logika</h3>
-                        <p style='margin: 5px 0 0 0; color: #333;'>Ditemukan {len(logic_anomalies)} transaksi dengan indikasi markup atau kesalahan input!</p>
+                        <h3 style='margin: 0;'>Peringatan Logika</h3>
+                        <p style='margin: 5px 0 0 0;'>Ditemukan {len(logic_anomalies)} transaksi dengan indikasi markup atau kesalahan input!</p>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
@@ -2158,7 +2024,7 @@ def main():
                 <div style='text-align: center; padding: 20px;'>
                     <div style='font-size: 4em;'>✅</div>
                     <h3 style='color: #27ae60; margin: 15px 0;'>Logika Konsisten</h3>
-                    <p style='color: #333;'>Tidak ditemukan ketidaksesuaian kategori dan biaya</p>
+                    <p>Tidak ditemukan ketidaksesuaian kategori dan biaya</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.markdown("</div>", unsafe_allow_html=True)
@@ -2172,8 +2038,8 @@ def main():
                 <div style='display: flex; align-items: center;'>
                     <div class='custom-alert-icon'>📋</div>
                     <div>
-                        <h3 style='margin: 0; color: #333;'>Duplikasi Terdeteksi</h3>
-                        <p style='margin: 5px 0 0 0; color: #333;'>Ditemukan {len(duplicates)} baris yang mencurigakan!</p>
+                        <h3 style='margin: 0;'>Duplikasi Terdeteksi</h3>
+                        <p style='margin: 5px 0 0 0;'>Ditemukan {len(duplicates)} baris yang mencurigakan!</p>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
@@ -2216,7 +2082,7 @@ def main():
                 <div style='text-align: center; padding: 20px;'>
                     <div style='font-size: 4em;'>✅</div>
                     <h3 style='color: #27ae60; margin: 15px 0;'>Data Bersih</h3>
-                    <p style='color: #333;'>Tidak ditemukan duplikasi atau double billing</p>
+                    <p>Tidak ditemukan duplikasi atau double billing</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.markdown("</div>", unsafe_allow_html=True)
@@ -2344,9 +2210,9 @@ def main():
             <div class="alert-box alert-danger">
                 <div style='text-align: center;'>
                     <div style='font-size: 2.5em;'>⚠️</div>
-                    <h4 style='margin: 10px 0; color: white;'>Anomali Biaya</h4>
-                    <p style="font-size: 3em; font-weight: 800; margin: 10px 0; color: white;">{len(cost_anomalies)}</p>
-                    <p style='color: white;'>transaksi ekstrim</p>
+                    <h4 style='margin: 10px 0;'>Anomali Biaya</h4>
+                    <p style="font-size: 3em; font-weight: 800; margin: 10px 0;">{len(cost_anomalies)}</p>
+                    <p>transaksi ekstrim</p>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -2356,9 +2222,9 @@ def main():
             <div class="alert-box alert-warning">
                 <div style='text-align: center;'>
                     <div style='font-size: 2.5em;'>🤔</div>
-                    <h4 style='margin: 10px 0; color: #333;'>Anomali Logika</h4>
-                    <p style="font-size: 3em; font-weight: 800; margin: 10px 0; color: #333;">{len(logic_anomalies)}</p>
-                    <p style='color: #333;'>ketidaksesuaian</p>
+                    <h4 style='margin: 10px 0;'>Anomali Logika</h4>
+                    <p style="font-size: 3em; font-weight: 800; margin: 10px 0;">{len(logic_anomalies)}</p>
+                    <p>ketidaksesuaian</p>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -2368,9 +2234,9 @@ def main():
             <div class="alert-box alert-info">
                 <div style='text-align: center;'>
                     <div style='font-size: 2.5em;'>📋</div>
-                    <h4 style='margin: 10px 0; color: #333;'>Duplikasi</h4>
-                    <p style="font-size: 3em; font-weight: 800; margin: 10px 0; color: #333;">{len(duplicates)}</p>
-                    <p style='color: #333;'>potensi double billing</p>
+                    <h4 style='margin: 10px 0;'>Duplikasi</h4>
+                    <p style="font-size: 3em; font-weight: 800; margin: 10px 0;">{len(duplicates)}</p>
+                    <p>potensi double billing</p>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -2432,15 +2298,14 @@ def main():
                 'Sedang': 'alert-warning',
                 'Rendah': 'alert-info'
             }
-            alert_class = priority_colors.get(rec['priority'], 'alert-info')
             st.markdown(f"""
-            <div class="alert-box {alert_class}">
+            <div class="alert-box {priority_colors.get(rec['priority'], 'alert-info')}">
                 <div style='display: flex; align-items: flex-start;'>
                     <div style='font-size: 2.5em; margin-right: 20px;'>{rec['icon']}</div>
                     <div style='flex: 1;'>
                         <h4 style='margin: 0 0 10px 0;'>{rec['title']}</h4>
                         <p style='margin: 0 0 10px 0;'>{rec['desc']}</p>
-                        <span class="badge badge-{rec['priority'].lower()}">{rec['priority']}</span>
+                        <span class="badge badge-{priority_colors.get(rec['priority'], 'info').replace('alert-', '')}">{rec['priority']}</span>
                     </div>
                 </div>
             </div>
@@ -2485,16 +2350,16 @@ def main():
                         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                     )
     
-    # Footer with animation - DARK MODE FIX
+    # Footer with animation
     st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
     st.markdown("""
     <div class="footer floating">
         <div style='font-size: 2em; margin-bottom: 15px;'>📊</div>
-        <p style='font-size: 1.2em; font-weight: 700; margin: 10px 0; color: white;'>Dashboard Analisis Biaya Pemeliharaan Kendaraan</p>
-        <p style="font-size: 0.95em; opacity: 0.9; margin: 5px 0; color: white;">Powered by Streamlit & Plotly</p>
-        <p style="font-size: 0.85em; opacity: 0.8; color: white;">© 2025 - All Rights Reserved</p>
+        <p style='font-size: 1.2em; font-weight: 700; margin: 10px 0;'>Dashboard Analisis Biaya Pemeliharaan Kendaraan</p>
+        <p style="font-size: 0.95em; opacity: 0.9; margin: 5px 0;">Powered by Streamlit & Plotly</p>
+        <p style="font-size: 0.85em; opacity: 0.8;">© 2025 - All Rights Reserved</p>
     </div>
     """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
-    main()
+    main() 
